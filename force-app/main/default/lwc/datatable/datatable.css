@@ -1,0 +1,37 @@
+@media screen and (max-width: 800px) {
+    .large-screen{
+        display : none;
+    }
+   
+}
+
+.columnClass{
+    min-width: 13rem;
+    max-width: 13rem;
+   
+}
+.headerClass{
+    padding-bottom: 1rem !important;
+    border-bottom: inset !important;
+}
+
+th{
+
+    /* css-3 */
+    white-space: -o-pre-wrap; 
+    word-wrap: break-word;
+    white-space: pre-wrap; 
+    white-space: -moz-pre-wrap; 
+    white-space: -pre-wrap; 
+
+}
+.headerNumberCss{
+    padding-left:  0.5rem!important;
+}
+
+.headerMappingCss{
+    padding-left: 2.5rem!important;
+}
+.headerLookupCss{
+    padding-left: 2rem !important;
+}

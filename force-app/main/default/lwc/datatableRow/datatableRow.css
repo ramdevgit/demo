@@ -1,0 +1,10 @@
+:host {
+    display: table-row;
+    border-top: var(--lwc-borderWidthThin,1px) solid var(--lwc-colorBorder,rgb(221, 219, 218));
+}
+@media screen and (max-width: 800px) {
+    :host {
+        width: -webkit-fill-available;  
+        border-top: var(--lwc-borderWidthThin,1px) solid var(--lwc-colorBorder,rgb(221, 219, 218));
+    }
+}

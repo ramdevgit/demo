@@ -1,0 +1,22 @@
+<template>
+    
+    <template for:each={columns}  for:item="col">
+        
+         <c-datatable-cell 
+             key={col.fieldApiName}
+             record-id={recordId} 
+             table-config={tableConfig} 
+             row={row}
+             column-config={col}
+             index={index}
+             onaddrow={handleAddRow}
+             oneditrow={handleEditRow} 
+             onremoverow={handleRemoveRow}
+             onrecordselection={handleRecordSelection}
+             onrecordunselection={handleRecordUnselection}
+             oninputchange={handleDataChange}
+         >
+         </c-datatable-cell>
+     </template>
+      
+ </template>

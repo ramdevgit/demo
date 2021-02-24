@@ -1,0 +1,57 @@
+<template>
+
+    <div class={tableProperties.scrollableCls} style="height:350px;">
+   
+        <div class="slds-scrollable_y" style="height:100%;">
+          
+          <div>
+            <c-toast></c-toast>
+          </div>
+    
+          <table class="slds-table slds-table_bordered slds-no-row-hover  slds-table--header-fixed  slds-table_col-bordered slds-table_fixed-layout slds-table_resizable-cols">
+              
+              <thead class="large-screen">
+                <tr class="slds-text-title_caps">
+                  <template for:each={columns} for:item="col" for:index="columnindex">
+                    <th key={col.fieldApiName} class="slds-hyphenate" scope="col" style=" word-wrap: break-word;" width={col.width}>
+                        <div  class={col.cssClass} if:true={col.showHeaderButton}  style=" word-wrap: break-word;" width={col.width}>   
+                        
+                            <lightning-button-icon data-id={col.fieldApiName} if:true={col.isButton} icon-name={col.iconName}  onclick={handleAddRow} variant="" alternative-text={col.altText} class={col.iconCss} >
+                            </lightning-button-icon> 
+                        </div>
+                        <div class={col.cssClass}   if:false={col.isButton} width={col.width}>   
+                           {col.label} 
+                        </div>
+                    </th>
+                  </template>
+                </tr>
+              </thead>
+    
+              <tbody>
+                <template for:each={rows} for:item="row" for:index="parentindex">
+                  <c-datatable-row 
+                    columns={columns} 
+                    table-config={tableConfig} 
+                    key={row.Id} 
+                    index={parentindex} 
+                    row={row} 
+                    oninputchange={handleDataChange} 
+                    record-id={recordId} 
+                    onrecordselection={handleRecordSelection} 
+                    onrecordunselection={handleRecordUnselection}
+                    onremoverow={handleRemoveRow}              
+                    onaddrow={handleAddRow}
+                    oneditrow={handleEditRow} 
+                    current-object-mapping={currentObjectMapping}
+                  >
+                  </c-datatable-row> 
+                </template>
+              </tbody>
+    
+          </table>
+    
+        </div>
+    
+      </div>
+    
+</template>
